@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<link rel="stylesheet" href="calculator.css">
+
+<body>
+
+    <div class="whole">
+        <a href="#b">
+            <h2>The Count-culator</h2>
+        </a>
+    </div>
+    <div class="container" id="b">
+
+        <fieldset id="container">
+            <form action="calculator">
+                <input id="a" type="text" class="main" placeholder="Enter the Numbers" name="display"><br>
+                <input class="digits1" type="button" value="7" onclick="pick(7)">
+                <input class=" digits" type="button" value="8" onclick="pick(8)">
+                <input class=" digits" type="button" value="9" onclick="pick(9)">
+                <input class="sub" type="button" value="+" onclick="pick('+')">
+                <br>
+                <input class=" digits1" type="button" value="4" onclick="pick(4)">
+                <input class=" digits1" type="button" value="5" onclick="pick(5)">
+                <input class=" digits" type="button" value="6" onclick="pick(6)">
+                <input class=" sub" type="button" value="-" onclick="pick('-')">
+                <br>
+                <input class=" digits1" type="button" value="1" onclick="pick(1)">
+                <input class="digits" type="button" value="2" onclick="pick(2)">
+                <input class=" digits1" type="button" value="3" onclick="pick(3)">
+                <input class=" sub" type="button" value="*" onclick="pick('*')">
+                <br>
+                <input class=" digits1" type="button" value="0" onclick="pick(0)">
+                <input id="clearButton" class="button" type="button" value="C" onclick="clr()">
+
+
+                <input class=" mathButtons" type="button" value="." onclick="pick('.')">
+                <input class=" sub" type="button" value="/" onclick="pick('/')">
+                <br>
+
+                <input class="point" id="points" type="button" value="=" onclick="solve()">
+            </form>
+        </fieldset>
+    </div>
+    <script>
+        function pick(val) {
+            document.getElementById("a").value += val;
+        }
+
+        function clr(val) {
+            document.getElementById("a").value = " ";
+        }
+
+        function solve() {
+            var x = document.getElementById("a").value;
+            var y = eval(x);
+            document.getElementById("a").value = y;
+        }
+    </script>
+</body>
